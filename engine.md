@@ -6,17 +6,17 @@
 - 框架级组件：由Engine创建并调用
 - 基础组件：由框架级组件实现类使用
 
-- [[soft/rime/processors|processors]]
-- [[soft/rime/segmentors|segmentors]]
-- [[soft/rime/translators|translators]]
-- [[soft/rime/filters|filters]]
+- [[processors]]
+- [[segmentors]]
+- [[translators]]
+- [[filters]]
 
 ##  调试
 [调试说明](https://github.com/rime/home/wiki/RimeWithSchemata#關於調試)
 
 输入引擎，作为整体来看，以`按键消息`为输入，输出包括：
 1. 对按键消息的处理结果：操作系统要一个结果、这按键、输入法接是不接？
-2. 暂存于输入法、尚未完成处理的内容，会展现在输入法[[soft/rime/候选框]]中。
+2. 暂存于输入法、尚未完成处理的内容，会展现在输入法[[候选框]]中。
 3. 要「上屏」的文字，并不是每按一键都有输出。通常中文字都会伴随「确认」动作而上屏，有些按键则会直接导致符号上屏，而这些还要视具体场景而定。
 
 ## context

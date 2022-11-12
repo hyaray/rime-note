@@ -1,7 +1,7 @@
 - [ ] 介绍网址
 > 全局设定
-> windows相关配置在[[soft/rime/weasel.custom.yaml|weasel.custom.yaml]]
-> 其他输入方案主要配置在[[soft/rime/hy.schema.yaml|hy.schema.yaml]]
+> windows相关配置在[[weasel.custom.yaml|weasel.custom.yaml]]
+> 其他输入方案主要配置在[[hy.schema.yaml|hy.schema.yaml]]
 ## schema_list
 > 修改输入方案列表
 ```
@@ -38,16 +38,16 @@
 ```
 
 ## menu
-> 输入法[[soft/rime/候选框]]数量
+> 输入法[[候选框]]数量
 ### page_size
-优先级比[[soft/rime/hy.schema.yaml#page_size]]低
+优先级比[[hy.schema.yaml#page_size]]低
 
 ### alternative_select_keys:
 `alternative_select_keys: "acegi"`
 - 数字键如设置为大写中文，用字母来选择个数
 
 ## Switcher
-> 输入方案切换[[soft/rime/rime#热键]]
+> 输入方案切换[[rime#热键]]
 ```yaml
 caption： [方案选择]
 hotkeys: ["Control+slash"]
@@ -59,14 +59,14 @@ option_list_separator: '／'
 > 方案选择热键
 内容来源：
 1. [[#schema_list]]定义的输入方案列表
-2. [[soft/rime/hy.schema.yaml#switches]]里的`status`不为空的列表
+2. [[hy.schema.yaml#switches]]里的`status`不为空的列表
 ```
 - Shift+space
 - Control+Shift+grave
 ```
 ### save_options
-> [[soft/rime/switches#reset]]优先级更高
-- 开启后，当切换[[soft/rime/switches#内置开关]]状态时，状态会被保存。每当方案初始化时，会恢复保存的状态。
+> [[switches#reset]]优先级更高
+- 开启后，当切换[[switches#内置开关]]状态时，状态会被保存。每当方案初始化时，会恢复保存的状态。
 ```
     - full_shape
     - ascii_punct

@@ -15,10 +15,10 @@
 
 ## menu
 ### page_size
-优先级比 [[soft/rime/default.custom.yaml#page_size]]高
+优先级比 [[default.custom.yaml#page_size]]高
 候选项个数（不超过10，会无法选字）`page_size: 10`
 
 ## switches
-[[soft/rime/switches]]
+[[switches]]
 ## engine
-[[soft/rime/engine|engine]]
+[[engine]]

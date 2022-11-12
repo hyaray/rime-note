@@ -3,7 +3,7 @@
 
 ### __include
 
-在當前位置包含另一 YAML 節點的內容，见[[soft/rime/自制输入方案#import_preset和__include的区别]]
+在當前位置包含另一 YAML 節點的內容，见[[自制输入方案#import_preset和__include的区别]]
 `__include: local/node`
 `__include: config.yaml:/external/node` 另一文件
 ```

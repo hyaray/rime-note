@@ -1,10 +1,10 @@
-打字的核心拼写处理逻辑，默认只处理小写字母按键为[[soft/rime/功能索引#输入码]]，其他直接上屏
+打字的核心拼写处理逻辑，默认只处理小写字母按键为[[功能索引#输入码]]，其他直接上屏
 
 ## alphabet
-定义本方案[[soft/rime/功能索引#输入码]]
+定义本方案[[功能索引#输入码]]
 - `zyxwvutsrqponmlkjihgfedcba`
 ## use_space
-是否以`空格`作为[[soft/rime/功能索引#输入码]]
+是否以`空格`作为[[功能索引#输入码]]
 
 ## max_code_length
 是形码的核心参数
@@ -13,7 +13,7 @@
 - [ ] 3码唯一时能否顶字上屏？
 `max_code_length: 4`
 ## auto_clear
-超过长度自动清除[[soft/rime/功能索引#输入码]]
+超过长度自动清除[[功能索引#输入码]]
 `auto_clear: max_length`
 ## auto_select
 [五笔 auto_select = true 时如何以 max_code_length = 4 为准 · Issue #289](https://github.com/rime/librime/issues/289)
@@ -31,7 +31,7 @@
 
 ## algebra
 > [[编程/正则]]
-拼写运算规则，算出的拼写汇入 [[soft/rime/个人文件夹#hy.prism.bin]] 中
+拼写运算规则，算出的拼写汇入 [[个人文件夹#hy.prism.bin]] 中
 
 ## initials
 仅作为起始键

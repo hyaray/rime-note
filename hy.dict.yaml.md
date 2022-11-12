@@ -1,6 +1,6 @@
 [dict文件详解](https://github.com/LEOYoon-Tsaw/Rime_collections/blob/master/Rime_description.md#dictyaml-詳解)
 > 单字、含词，扩展字库等设计为3种输入方案
-- 是 [[soft/rime/translators]] 的参考书，可以用`#`注释
+- 是 [[translators]] 的参考书，可以用`#`注释
 - 通过 import_tables: [hy]和主码表(hy.dict.yaml)在「Librime」引擎中合二为一。主要依据是词频
 
 ## 文件格式要求
@@ -26,7 +26,7 @@
 - 数组选项 ['^z.*$']
 
 ### import_tables
-> 用这个还是用 [[soft/rime/translator#dictionary]]
+> 用这个还是用 [[translator#dictionary]]
 导入的词典只导入词汇，会忽略YAML定义内容
 导入其他词典(字(本身)、词、英语名称、用户词、生僻字分开)，发送各格式的日期
 用户词典名为去掉`.`后面内容的名称比如 `hy.ext.dict.yaml`，用户词典名为`hy`而不是`hy.ext`

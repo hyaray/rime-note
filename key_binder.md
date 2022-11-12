@@ -1,6 +1,6 @@
 # key_binder
 ## 不在配置内
-- [[soft/rime/default.custom.yaml#hotkeys|hotkeys]]不在此配置
+- [[default.custom.yaml#hotkeys|hotkeys]]不在此配置
 - 上屏提示内容`Control+Shift+return`
 
 ## 可配置项

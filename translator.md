@@ -2,7 +2,7 @@
 
 ## 和segmentor相同的选项
 > 同时也可在副 translator 中定义
-![[soft/rime/segmentor]]
+![[segmentor]]
 ### echo_translator
 > 没有其他候选字时，回显输入码（输入码可以`Shift+Enter`上屏）
 
@@ -15,7 +15,7 @@
 
 ### enable_sentence
 > 允许句子输入
-设置了[[soft/rime/speller#max_code_length]]，此选项基本上无效
+设置了[[speller#max_code_length]]，此选项基本上无效
 
 ### enable_user_dict
 > 是否开启用户词典（记录动态字词频、用户词）
@@ -37,11 +37,11 @@
 `db_class: userdb #二进制`
 
 ### initial_quality
-> 此翻译器的优先级，数据越大优先级越高（影响[[soft/rime/候选框]]字序）
+> 此翻译器的优先级，数据越大优先级越高（影响[[候选框]]字序）
 > 默认码表为`0`
 
 ### prism
-> 设定由此主翻译器的 [[soft/rime/speller]] 生成的棱镜文件名，或此副编译器调用的棱镜名
+> 设定由此主翻译器的 [[speller]] 生成的棱镜文件名，或此副编译器调用的棱镜名
 
 ### comment_format
 > [[编程/正则]]
@@ -61,13 +61,13 @@
 > 最大自动成词词长
 ### enable_completion
 > 显示尚未输入完整码的字
-- [ ] `enable_completion: true` 设置后，在[[soft/rime/反查|拼音反查]]里，词组反查失效了
+- [ ] `enable_completion: true` 设置后，在[[反查|拼音反查]]里，词组反查失效了
 ### sentence_over_completion
 > 在无全码对应字而仅有逐键提示时也开启智能组句
 ### strict_spelling
-> 配合[[soft/rime/speller]]中的fuzz规则，仅以畧拼码组词
+> 配合[[speller]]中的fuzz规则，仅以畧拼码组词
 ### enable_charset_filter
-> 是否开启字符集过滤（启用 [[soft/rime/filters#cjk_minifier]] 后可适用于 [[soft/rime/translators#script_translator]]）
+> 是否开启字符集过滤（启用 [[filters#cjk_minifier]] 后可适用于 [[translators#script_translator]]）
 
 ## 仅script_translator有效
 ### spelling_hints

@@ -1,5 +1,5 @@
 # ascii_composer
-> 中英文状态切换键，【可选】输出已上屏按键或候选项，详见[[soft/rime/default.yaml#ascii_composer|ascii_composer]]
+> 中英文状态切换键，【可选】输出已上屏按键或候选项，详见[[default.yaml#ascii_composer|ascii_composer]]
 ## good_old_caps_lock
 `good_old_caps_lock: true` CapsLock是否输出大写字母
 

@@ -22,24 +22,24 @@ filter 可以：
 过滤重复的候选字（后面的会`覆盖`前面的），有可能来自 [[#simplifier]]
 
 ### simplifier
-以`simplifier`开头的都是[[soft/rime/滤镜]]
-根据 [[soft/rime/switches#simplification]] 值进行繁/简转化
+以`simplifier`开头的都是[[滤镜]]
+根据 [[switches#simplification]] 值进行繁/简转化
 
 ### lua_filter
-> 针对[[soft/rime/候选框]]
-> 见[[soft/rime/translators#lua_translator]]
+> 针对[[候选框]]
+> 见[[translators#lua_translator]]
 使用lua自定义过滤，例如过滤字符集、调整排序，后接`@函数名`
 lua函数名即用户文件夹内`rime.lua`中函数名，参数为`(input, env)`
-可以`env.engine.context:get_option("option_name")`方式绑定到[[soft/rime/switches]]/[[soft/rime/key_binder]]
+可以`env.engine.context:get_option("option_name")`方式绑定到[[switches]]/[[key_binder]]
 
 ### single_char_filter
-单字过滤器，如加载此组件，则屏敝词典中的词组（仅[[soft/rime/translators#table_translator]]有效）
+单字过滤器，如加载此组件，则屏敝词典中的词组（仅[[translators#table_translator]]有效）
 
 ### cjk_minifier
-字符集过滤〔仅用于 [[soft/rime/translators#script_translator]]，使之支援extended_charset 开关
+字符集过滤〔仅用于 [[translators#script_translator]]，使之支援extended_charset 开关
 
 ### reverse_lookup_filter
-[[soft/rime/translators#reverse_lookup_filter|reverse_lookup_filter]]
+[[translators#reverse_lookup_filter|reverse_lookup_filter]]
 ```
 - charset_filter@gb2312
 - single_char_filter #单字过滤器，屏敝词典中的词组

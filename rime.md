@@ -28,13 +28,12 @@
 - [ ] 当设置为唯一输入法时，有时候会一直禁用，导致无法打字
 - [ ] AutoHotkey无法获取当前中文/英文状态，且无法获取
 
-- [[soft/rime/自制输入方案]]
-- [[soft/rime/hy.schema.yaml]]
-- [[soft/rime/功能索引]]
-- [[soft/rime/engine]]
-- [[soft/rime/个人文件夹]]
-- [[soft/rime/程序文件夹]]
-- [librime-lua](https://github.com/shewer/librime-lua/releases)
+- [[自制输入方案]]
+- [[hy.schema.yaml]]
+- [[功能索引]]
+- [[engine]]
+- [[个人文件夹]]
+- [[程序文件夹]]
 
 ```tasks
 path includes soft/rime

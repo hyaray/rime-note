@@ -1,15 +1,15 @@
 > ✅✅✅逻辑入口，根据[[#处理器]]定义的<font color=red>顺序</font>依次判断按键，比如[[#ascii_composer]]不匹配则交给[[#recognizer]]，参考脚本语言的`if`
 - [ ] 如果匹配后，是跳过下面处理器还是继续处理？
 
-> 通过组合可以承担[[soft/rime/engine]]的全部任务，但为了将逻辑继续细分、又设置了[[soft/rime/segmentors|segmentors]], [[soft/rime/translators|translators]]和[[soft/rime/filters|filters]]功能组件
-> 最常见的处理，便是将按键所产生的字符记入上下文中的「[[soft/rime/rime#输入码|输入码]]」序列，由下一组件[[soft/rime/segmentors|segmentors]]开始一轮新的作业
+> 通过组合可以承担[[engine]]的全部任务，但为了将逻辑继续细分、又设置了[[segmentors]], [[translators]]和[[filters]]功能组件
+> 最常见的处理，便是将按键所产生的字符记入上下文中的「[[rime#输入码|输入码]]」序列，由下一组件[[segmentors]]开始一轮新的作业
 
 1. 对按键的处理结果，返回给操作系统
     - 拒：操作系统自己处理
     - 收
         - 直接处理
         - 交给其他`processor`
-1. 暂存于输入法，尚未完成处理的内容，会展现在[[soft/rime/候选框]]中
+1. 暂存于输入法，尚未完成处理的内容，会展现在[[候选框]]中
 2. 要上屏的文字，并不是每按一键都有输出，要视情况而定
 
 ## 按键分类
@@ -17,25 +17,25 @@
 - `自定义热键`由 [[#key_binder]] 定义，优先级最高
 - `shift` 和 `ctrl` 控制【中英文状态】由 [[#ascii_composer]] 处理
 - `数字`上屏候选项，`上下键`切换候选项，【换页】由 [[#selector]] 处理
-- `空格`，`回车`上屏，`BackSpace`删除[[soft/rime/rime#输入码|输入码]]由 [[#express_editor]] 处理
+- `空格`，`回车`上屏，`BackSpace`删除[[rime#输入码|输入码]]由 [[#express_editor]] 处理
 
 - `标点符号`由 [[#punctuation]] 处理
-- `字母`由 [[soft/rime/speller]] 处理
-- `正则判断`由 [[soft/rime/recognizer]] 处理
+- `字母`由 [[speller]] 处理
+- `正则判断`由 [[recognizer]] 处理
 
 ## 处理器
 > 基本上都是内置的
-- [[soft/rime/ascii_composer|ascii_composer]]
-- [[soft/rime/recognizer|recognizer]]
-- [[soft/rime/key_binder|key_binder]]
-- [[soft/rime/speller|speller]]
-- [[soft/rime/editor|editor]]
+- [[ascii_composer]]
+- [[recognizer]]
+- [[key_binder]]
+- [[speller]]
+- [[editor]]
 
 ### punctuator
 [注音字母-Unicode字符百科](https://unicode-table.com/cn/blocks/bopomofo)
 > 单字符映射为任意内容
 - 特殊符号的输出全在这里，key_binder 没处理的热键
-- [[soft/rime/程序文件夹#default.yaml|default.yaml]]加载了`punctuation.yaml`
+- [[程序文件夹#default.yaml|default.yaml]]加载了`punctuation.yaml`
 #### use_space
 是否空格顶字
 `use_space: true`
@@ -67,10 +67,10 @@
 > 也可以写作 `fluency_editor`
 
 ### selector
-[[soft/rime/候选框]]处理器（数字键、上下、换页）
+[[候选框]]处理器（数字键、上下、换页）
 
 ### navigator
-[[soft/rime/功能索引#输入码|输入码]] 内的光标移动（左右，Home，End）
+[[功能索引#输入码|输入码]] 内的光标移动（左右，Home，End）
 
 ### chord_composer
 示例`combo_pinyin.schema.yaml`

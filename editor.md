@@ -1,4 +1,4 @@
-定制操作键，不支持[[soft/rime/自制输入方案#import_preset]]
+定制操作键，不支持[[自制输入方案#import_preset]]
 ## comfirm
 上屏候选项
 ## commit_comment
