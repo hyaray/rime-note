@@ -22,6 +22,7 @@
 - [ ] `''`临时只查生僻字
 - [ ] `;`临时英语
 - [ ] `'`拼音反查和临时生僻字
+- [ ] 上面的需求，是否需要做成单独的输入方案，还是直接在单个输入方案里配置即可？
 - `'`拼音反查✅
 
 - [ ] 当设置为唯一输入法时，有时候会一直禁用，导致无法打字
@@ -33,6 +34,7 @@
 - [[soft/rime/engine]]
 - [[soft/rime/个人文件夹]]
 - [[soft/rime/程序文件夹]]
+- [librime-lua](https://github.com/shewer/librime-lua/releases)
 
 ```tasks
 path includes soft/rime
@@ -42,4 +44,3 @@ hide task count
 sort by start
 sort by priority
 ```
-

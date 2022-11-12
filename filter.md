@@ -13,6 +13,9 @@
 ## overwrite
 是否覆盖其他提示
 ## tips
+是否显示转换前的字
+- [ ] 和 [[#show_in_comment]] 的关联？
+`tips: all` ，可填`none`(默认)、`char`(仅单字)、`all`
 ## show_in_comment
 设定是否仅将转换结果显示在备注中，否则和候选框对调位置
 `show_in_comment: true`

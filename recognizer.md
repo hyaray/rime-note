@@ -4,7 +4,7 @@
 - 非内置`tagName`，其它字段不调用输入法引擎，`输入即输出`〔如`url`等字段〕
 
 ## patterns
-
+> 注意`数字`，否则可能无法选择项目
 配合[[soft/rime/segmentor#prefix]]和`suffix`完成段落劃分、[[soft/rime/功能索引#tag]]分配
 ### reverse_lookup
 `reverse_lookup: "^'[a-z]*$"` 这里的`'`符必须和[[#reverse_lookup]]

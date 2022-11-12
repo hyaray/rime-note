@@ -1,11 +1,41 @@
 [[编程/正则]]
-## 地球拼音
+
+修改
+> 对输入的编码进行修正并显示
+    - 拼音：输入`lv`，显示`lü`
+    - 笔画：输入`hspnz`显示`一丨丿丶乙`
+
+## xform
+> 替换（不保留原形）
+- `xform/^([nl])ue$/$1ve/`
+- `nue`和`lue`不匹配，`nve`和`lve`才可获得结果
+
+## xlit
+> 批量一对一替换
+- `xlit/abc/ABC/` abracadabra→ABrACAdABrA
+-
+## derive
+>衍生（保留原形）
+- `derive/^([nl])ue$/$1ve/` nue/nve/lue/lve都可获得结果
+-
+## erase
+>删除
+- `erase/^.*\d$/` dang1这种格式的全被删除
+
+## fuzz
+>畧拼（此种简拼仅组词，不出单字）
+
+## abbrev
+>简拼（出字优先级较上两组更低）
+
+## 示例
+### 地球拼音
 ```
 - xform/([nl])v/$1ü/
 - xform/([nl])ue/$1üe/
 - xform/([jqxy])v/$1u/
 ```
-## 双拼
+### 双拼
 ```
 translator:
 dictionary: luna_pinyin # 与【朙月拼音】共用词典

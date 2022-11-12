@@ -61,6 +61,7 @@
 > 最大自动成词词长
 ### enable_completion
 > 显示尚未输入完整码的字
+- [ ] `enable_completion: true` 设置后，在[[soft/rime/反查|拼音反查]]里，词组反查失效了
 ### sentence_over_completion
 > 在无全码对应字而仅有逐键提示时也开启智能组句
 ### strict_spelling
