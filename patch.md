@@ -35,7 +35,7 @@ patch_example_1:
   replace_map:
     a: value
     b: value
-    
+
   __patch:
     sibling: new value
     append_to_list/+: #添加 list
