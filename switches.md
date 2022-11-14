@@ -1,4 +1,5 @@
 > 定义开关，设置热键在 [[key_binder]]
+> 是否可以定义字符集开关，这样就能实现字符集的自由组合了
 [开关](https://github.com/LEOYoon-Tsaw/Rime_collections/blob/master/Rime_description.md#開關)
 
 ## name
@@ -21,6 +22,8 @@
 
 ### 自定义
 
+## options
+`options: [normal, extended]` 和[[#name]]二选一即可
 ## states
 可不写，[[default.custom.yaml#hotkeys]]不会显示此项
 

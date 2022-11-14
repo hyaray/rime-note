@@ -12,9 +12,14 @@ filter 可以：
 5. 码表与词典
 6. 词典是 translator 的参考书。
 
-他往往与同名输入方案配套使用，如拼音的词典以拼音码查字，仓颉的词典以仓颉码查字。但也可以由若干编码属于同一系统的输入方案共用，如各种双拼方案，都使用和拼音同样的词典，于是不仅復用了码表数据，也可共享用户以任一款此系列方案录入的自造词（仍以码表中的形式即全拼编码记录）。
+他往往与同名输入方案配套使用，如拼音的词典以拼音码查字，仓颉的词典以仓颉码查字。但也可以由若干编码属于同一系统的输入方案共用，如各种双拼方案，都使用和拼音同样的词典，于是不仅復用了码表数据，也可共享用户以任一款此系列方案录入的自造词（仍以码表中的形式即全拼编码记录）
 
 这批组件过滤翻译的结果，自定义滤镜皆可使用开关调控
+
+## 自定义字符集
+- [ ] 暂未实现
+[自定义增广字库 · Issue #91 · rime/home](https://github.com/rime/home/issues/91)
+- 如果用户可以自定义几个字符集（或其他概念），比如常用字，生僻字，内置词组，自定义词组等几类。然后用[[switches]]可以指定当前生效是哪几个字符集，这样就不需要用字典来判断了？这个不好实现吗？
 
 ## 参数
 
@@ -26,11 +31,7 @@ filter 可以：
 根据 [[switches#simplification]] 值进行繁/简转化
 
 ### lua_filter
-> 针对[[候选框]]
-> 见[[translators#lua_translator]]
-使用lua自定义过滤，例如过滤字符集、调整排序，后接`@函数名`
-lua函数名即用户文件夹内`rime.lua`中函数名，参数为`(input, env)`
-可以`env.engine.context:get_option("option_name")`方式绑定到[[switches]]/[[key_binder]]
+[[rime-lua.md#lua_filter]]
 
 ### single_char_filter
 单字过滤器，如加载此组件，则屏敝词典中的词组（仅[[translators#table_translator]]有效）
@@ -39,7 +40,16 @@ lua函数名即用户文件夹内`rime.lua`中函数名，参数为`(input, env)
 字符集过滤〔仅用于 [[translators#script_translator]]，使之支援extended_charset 开关
 
 ### reverse_lookup_filter
-[[translators#reverse_lookup_filter|reverse_lookup_filter]]
+[reverse_lookup_filter](https://github.com/LEOYoon-Tsaw/Rime_collections/blob/master/Rime_description.md#四reverse_lookup_filter)
+反查滤镜，以更灵活的方式反查，Rime1.0后<font color=red>替代</font>[[translators.md#reverse_lookup_translator]]
+> 此属性虽定义在[[translators]]，本质上属于[[filters]]
+可加载多个实例，后接`@+filterName`
+- `reverse_lookup_filter@reverse_lookup`
+- `reverse_lookup_filter@pinyin_lookup`
+- `reverse_lookup_filter@jyutping_lookup`
+
+## 
+- [ ] 如何实现
 ```
 - charset_filter@gb2312
 - single_char_filter #单字过滤器，屏敝词典中的词组

@@ -28,16 +28,6 @@
 ## reverse_lookup_translator
 ❌已淘汰：被[[filters#reverse_lookup_filter]]替代
 反查翻译器，用另一种编码方案输入+反查：比如用拼音打字，并显示五笔编码
-## reverse_lookup_filter
-[reverse_lookup_filter](https://github.com/LEOYoon-Tsaw/Rime_collections/blob/master/Rime_description.md#四reverse_lookup_filter)
-反查滤镜，以更灵活的方式反查，Rime1.0后<font color=red>替代</font>[[translators.md#reverse_lookup_translator]]
-> 此属性虽定义在[[translators]]，本质上属于[[filters]]
-可加载多个实例，后接`@+filterName`
-- `reverse_lookup_filter@reverse_lookup`
-- `reverse_lookup_filter@pinyin_lookup`
-- `reverse_lookup_filter@jyutping_lookup`
-
-- [ ] 如何实现
 
 ## lua_translator
 [hchunhui/librime-lua](https://github.com/hchunhui/librime-lua/issues)

@@ -9,14 +9,24 @@
 ### author
 ### description
 ### dependencies
-如果本方案依赖于其它方案〔通常来说会依頼其它方案`反查`，抑或是`多种方案混用`时〕，填写其他方案的[[#schema_id]]列表
-- [ ] 似乎不定义也没问题
-- [ ] 这里定义后，是编译时会把词库关联起来吗？
+> 填写其他方案的[[#schema_id]]列表
+> 定义后，[[用户文件夹#build|build]]会生成`xxx.reverse.bin`文件
+#### 场景
+1. 反查
+2. 多种方案混用
+
+#### 相关
+[[#dependencies]]和[[default.custom.yaml#schema_list]]区别
+1. 前者是输入方案内部使用，
 
 ## menu
 ### page_size
 优先级比 [[default.custom.yaml#page_size]]高
 候选项个数（不超过10，会无法选字）`page_size: 10`
+### alternative_select_keys
+> 指定选字上屏的热键(代替`12345`)
+> 当数字键有其他用时，比如？
+`alternative_select_keys: aeiou`
 
 ## switches
 [[switches]]

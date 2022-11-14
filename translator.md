@@ -12,7 +12,10 @@
 - 翻译器将调取此字典文件（如果有扩展，则调用扩展）
 - 如果用了其他输入法的词库，则需要定义 [[#prism]] 名称以免覆盖其他输入法映射
 - `dictionary: wubi86_ci.extended`
-
+```
+- 【侯】局局(525312750)  23:46:28
+涉及 dictionary 选项时，就只与 dictionary 有关。luna_pinyin_simp 方案本身的 dictionary 就是 luna_pinyin 的，所以只能用 luna_pinyin 的，反查也是
+```
 ### enable_sentence
 > 允许句子输入
 设置了[[speller#max_code_length]]，此选项基本上无效
