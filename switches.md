@@ -1,4 +1,5 @@
 > 定义开关，设置热键在 [[key_binder]]
+> 折叠和展开见[[default.custom.yaml#fold_options]]
 > 是否可以定义字符集开关，这样就能实现字符集的自由组合了
 [开关](https://github.com/LEOYoon-Tsaw/Rime_collections/blob/master/Rime_description.md#開關)
 
@@ -13,8 +14,8 @@
 #### ascii_punct
 0中文，1英文标点
 #### extended_charset
+❌不好用，但是自己用码表管理更好
 0为CJK字符集，1为全字符集（仅[[translators#table_translator|table_translator]]可用）
-- [ ] 如何切换的？数据从哪来？
 #### simplification
 > 汉字简繁体转换开关，常规是不用的
 
@@ -25,7 +26,7 @@
 ## options
 `options: [normal, extended]` 和[[#name]]二选一即可
 ## states
-可不写，[[default.custom.yaml#hotkeys]]不会显示此项
+若不写，则[[default.custom.yaml#hotkeys]]不会显示此项
 
 ## reset
 如果想要记住状态，则

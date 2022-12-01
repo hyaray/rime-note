@@ -1,6 +1,20 @@
-- [Rime_description.md#细项配置](https://github.com/LEOYoon-Tsaw/Rime_collections/blob/master/Rime_description.md#細項配置)
+- [Rime_description#细项配置](https://github.com/LEOYoon-Tsaw/Rime_collections/blob/master/Rime_description.md#細項配置)
+- [SpellingAlgebra · rime/home Wiki](https://github.com/rime/home/wiki/SpellingAlgebra#拼寫運算詳解)
 - [RimeWithTheDesign框架设计和示例代码](https://github.com/rime/home/wiki/RimeWithTheDesign)
+- [輸入法引擎與功能組件](https://github.com/rime/home/wiki/RimeWithSchemata#輸入法引擎與功能組件)
+- 流程：`输入码→（棱镜）→code→（词典）→文本`
+```
+【男】ss(2484799116) 22-11-16 16:16:05
+https://github.com/rime/librime/blob/9086de3dd802d20f1366b3080c16e2eedede0584/src/rime/engine.cc#L96-L115
+context.input 输入码更新时
 
+https://github.com/rime/librime/blob/9086de3dd802d20f1366b3080c16e2eedede0584/src/rime/engine.cc#L144-L158
+输入码打tag
+https://github.com/rime/librime/blob/9086de3dd802d20f1366b3080c16e2eedede0584/src/rime/engine.cc#L155
+
+translator+filter
+https://github.com/rime/librime/blob/9086de3dd802d20f1366b3080c16e2eedede0584/src/rime/engine.cc#L156
+```
 ## 分类
 
 - 框架级组件：由Engine创建并调用

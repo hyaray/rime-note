@@ -16,13 +16,13 @@
 - always
 - has_menu 有多个选项
 - paging 按过下一页
-- composing 操作输入码
+- composing 操作[[输入码]]
 #### 做什么
 - send: 发送按键, `escape`则为清空内容
 - toggle: 切换开关
 - select: `.next`
 #### accept
-> [[rime/按键]]
+> [[按键]]
 
 ### 选中第2/3项
 ```yaml

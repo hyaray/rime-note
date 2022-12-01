@@ -1,3 +1,11 @@
+- [✅✅✅必知必会-创作输入方案](https://github.com/rime/home/wiki/RimeWithSchemata)
+- [✅Schema.yaml](https://github.com/LEOYoon-Tsaw/Rime_collections/blob/master/Rime_description.md)
+
+- [输入方案下载](https://github.com/rime/plum#packages)
+- [方案](https://github.com/orgs/rime/repositories)
+- [雾凇拼音，我的 Rime 配置及新手指引](https://dvel.me/posts/my-rime)
+- [我的 Rime 配置 2022 - Dvel](https://dvel.me/posts/my-rime-setting-2022)
+- [特色功能-开源好用的98五笔输入法-基于Rime的高效五笔输入法](http://www.98wubi.com/tese.html)
 ## schema
 ### schema_id
 唯一方案名称，在代码中引用此方案时以此名为正，通常由英文、数字、下划线组成
@@ -5,7 +13,6 @@
 ### name
 ### version
 发布新版前确保升级版本号
-- [ ] 具体用途？
 ### author
 ### description
 ### dependencies

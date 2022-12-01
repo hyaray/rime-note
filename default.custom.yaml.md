@@ -1,7 +1,7 @@
-- [ ] 介绍网址
+
 > 全局设定
-> windows相关配置在[[weasel.custom.yaml|weasel.custom.yaml]]
-> 其他输入方案主要配置在[[hy.schema.yaml|hy.schema.yaml]]
+> windows相关配置在[[weasel.custom.yaml]]
+> 其他输入方案主要配置在[[hy.schema.yaml]]
 ## schema_list
 > 修改输入方案列表
 ```
@@ -48,22 +48,15 @@
 
 ## Switcher
 > 输入方案切换[[rime#热键]]
-```yaml
-caption： [方案选择]
-hotkeys: ["Control+slash"]
-fold_options: true
-abbreviate_options: true
-option_list_separator: '／'
-```
+### caption
+`caption： [方案选择]`
+
 ### hotkeys
 > 方案选择热键
 内容来源：
 1. [[#schema_list]]定义的输入方案列表
 2. [[hy.schema.yaml#switches]]里的`status`不为空的列表
-```
-- Shift+space
-- Control+Shift+grave
-```
+
 ### save_options
 > [[switches#reset]]优先级更高
 - 开启后，当切换[[switches#内置开关]]状态时，状态会被保存。每当方案初始化时，会恢复保存的状态。
@@ -71,21 +64,12 @@ option_list_separator: '／'
     - full_shape
     - ascii_punct
 ```
-### fold_option
-每个选项（或者是它的每个状态？）都成为一个候选
+### fold_options
+[[hy.schema.yaml#switches]] 里的选项折叠成[[#hotkeys]]里的单行
 `fold_option: false`
-
-```
-【侯】局局(525312750)  14:10:22
-fold_options 这样描述吧，顾名思义，折叠选项。在方案选单中，选项是折叠成一个候选的，选中就会展开。如果不折叠，应该就是直接展开的状态。
-
-【侯】局局(525312750)  14:12:43
-至于展开状态是如何布局的，反正展开状态只有一种，就不描述了。
-```
-
 ### abbreviate_options
-控制是否将每个选项名称略显为首字符
+✅[[#fold_options]]时才有用：控制是否将每个选项名称略显为首字符
 `abbreviate_options: true`
 ### option_list_separator
-控制选项名之间的分隔符
+✅[[#fold_options]]时才有用：分隔符，默认是空格
 `option_list_separator: '/'`

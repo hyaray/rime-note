@@ -1,4 +1,10 @@
 [Rime_collections/Rime_description.md at master · LEOYoon-Tsaw/Rime_collections](https://github.com/LEOYoon-Tsaw/Rime_collections/blob/master/Rime_description.md#七lua)
+[[附件/rime/小狼毫版lua脚本使用教程.pdf]]
+## api
+- https://github.com/rime/weasel/issues/299
+- https://github.com/rime/librime/issues/479
+- https://github.com/rime/librime/blob/master/tools/rime_api_console.cc
+
 
 ## librime-lua
 - [rime-lua文档](https://github.com/hchunhui/librime-lua/wiki/Scripting#脚本开发指南)
@@ -6,7 +12,7 @@
 - [✅✅✅shewer/librime-lua-script](https://github.com/shewer/librime-lua-script)
 
 ## 更新
-更新[[soft/rime/程序文件夹#rime.dll|rime.dll]]
+更新[[soft/rime/共享文件夹#rime.dll|rime.dll]]
 
 ## lua_processor
 返回值为整数：
@@ -130,7 +136,7 @@ end
 
 #### Candidate
 候选词
-[Candidate](https://github.com/hchunhui/librime-lua/wiki/Scripting#keyevent) 
+[Candidate](https://github.com/hchunhui/librime-lua/wiki/Scripting#keyevent)
 
 `Candidate("date", seg.start, seg._end, os.date("%Y年%m月%d日"), "")`
 #### yield

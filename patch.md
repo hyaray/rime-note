@@ -1,9 +1,52 @@
-## patch
-[rime用yaml修改配置](https://github.com/rime/home/wiki/Configuration)
+> 方案名约定为<font color=red>hy</font>
+> 以源文件为基础（[[#import_preset]]），[[#patch]]覆盖重新定义的选项（`custom`文件才有效）
+[patch原理](https://blog.csdn.net/weixin_42148809/article/details/124827354)
+[patch用法](https://github.com/rime/home/wiki/Configuration#補靪)
+[CustomizationGuide](https://github.com/rime/home/wiki/CustomizationGuide#定製指南)
 
+## import_preset和__include的区别
+和上下文相关
+
+## import_preset
+> 由外部文件导入，实现模块化配置：可对各模块新建 `*.custom.yaml` 文件，每个文件里`patch:`即可实现
+> 比如[[#key_binder]]设置`import_preset: default`，会从[[共享文件夹#default.yaml|default.yaml]]导入对应的配置
+用到此方法的模块有 recognizer、key_binder、punctuator
+
+## patch
+### 数组操作
+```yaml
+最前插入
+xxx/@before 0: a
+xxx/@before 1: b
+xxx/@before 2: c
+
+第1项后面依次插入
+xxx/@after 0: a
+xxx/@after 1: a
+xxx/@after 2: a
+
+最后1项前依次插入
+xxx/@before last: a
+xxx/@before last1: b
+xxx/@before last2: c
+
+末尾依次插入
+xxx/+: #推荐
+  - a
+  - b
+  - c
+
+xxx/@next: a
+xxx/@next1: b
+xxx/@next2: c
+xxx/@next10: c #10开始异常
+``` 
+
+### 键值对
+`xxx/key: value`
 ### __include
 
-在當前位置包含另一 YAML 節點的內容，见[[自制输入方案#import_preset和__include的区别]]
+在当前位置包含另一 YAML 节点的內容
 `__include: local/node`
 `__include: config.yaml:/external/node` 另一文件
 ```
@@ -60,6 +103,7 @@ patch_example_1:
 - `"switches/@0/reset": 1`表示switches的第1项的值改成1
 
 ## 覆盖式（列表样式）
+✅✅✅
 - 复制原段落(第1行没缩进)到文件
 - 粘贴的内容增加2缩进，如果文件没patch则前面行插入没缩进的patch:
 - 修改相应的值即可
