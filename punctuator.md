@@ -1,4 +1,3 @@
-
 [注音字母-Unicode字符百科](https://unicode-table.com/cn/blocks/bopomofo)
 > 单字符映射为任意内容
 - 特殊符号的输出全在这里，key_binder 没处理的热键
@@ -6,6 +5,7 @@
 
 ## full_shape
 ## half_shape
+## ascii_style
 ## symbols
 ❌❌❌[[反查#reverse_lookup_filter]]不支持，如果需要，转成[[hy.dict.yaml]]
 

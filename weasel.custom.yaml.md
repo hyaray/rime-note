@@ -9,7 +9,9 @@ cmd.exe: {ascii_mode: true}
 preset_color_schemes
 
 ## style
+> ✅✅✅注意，颜色是`BGR`
 - `color_scheme`=当前使用的style
 ![[附件/小狼毫配色.png]]
 [Rime-See-Me/](https://bennyyip.github.io/Rime-See-Me/)
-- 注意，颜色是BGR
+### label_format
+候选项序号的格式，`%s`代表数字

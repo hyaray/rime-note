@@ -1,10 +1,24 @@
 [Rime_collections/Rime_description.md at master · LEOYoon-Tsaw/Rime_collections](https://github.com/LEOYoon-Tsaw/Rime_collections/blob/master/Rime_description.md#三translators)
 > [[代码段|代码段]]，需要转为[[候选框|候选框]]
 
-1. 翻译的对象是[[代码段|代码段]]
-2. 代码段可由几种 [[translator]] 分别翻译（单个往往只翻译特定标签的代码段）、
-3. 翻译的结果可能有多条，每条结果成为一个展现给用户的候选项。默认显示每条结果的首个选项，按一定规则合并成[[候选框]]
-4. 候选项所对应的编码未必是整个代码段(比如用拼音输句子时，词组后面继续列出单字候选)
+## translators
+二选一，定义所有翻译器，处理逻辑：
+
+1. 遍历 [[输入码#代码段]]，执行如下命令
+    1. 遍历每个翻译器，和当前的 [[tag]] 比较，匹配，则把[[代码段|代码段]]转成候选项。
+    2. 代码段可由几种 [[translator]] 分别翻译
+    3. 翻译的结果可能有多条，每条结果成为一个展现给用户的候选项。默认显示每条结果的首个选项，按一定规则合并成[[候选框]]
+    4. 候选项所对应的编码未必是整个代码段(比如用拼音输句子时，词组后面继续列出单字候选)
+### table_translator
+码表翻译器，从码表里查找[[segmentors#abc_segmentor|abc_segmentor]] 标记的内容，比如在五笔里使用
+- 码表为 [[translator#dictionary]] 选项对应的文件，比如[[hy.dict.yaml]]
+```yaml
+table_translator #效果等同于 table_translator@translator
+table_translator@lt_xxx
+```
+
+### script_translator
+用于拼音等基于音节表的输入方案
 
 每个方案有一个主 `translator`（以 `translator:` 定义）
 
@@ -31,17 +45,3 @@
 - lua_translator@week_translator  #自定义星期输出
 - lua_translator@number_translator  #自定义数字转大写以/引导
 ```
-
-## 翻译器
-> 二选一
-### table_translator
-码表翻译器，从码表里查找[[segmentors#abc_segmentor|abc_segmentor]] 标记的内容，比如在五笔里使用
-- 码表为 [[translator#dictionary]] 选项对应的文件，比如[[hy.dict.yaml]]
-```yaml
-table_translator #效果等同于 table_translator@translator
-table_translator@lt_xxx
-```
-
-### script_translator
-用于拼音等基于音节表的输入方案
-

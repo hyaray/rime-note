@@ -1,9 +1,10 @@
 > 方案名约定为<font color=red>hy</font>
 > 以源文件为基础（[[#import_preset]]），[[#patch]]覆盖重新定义的选项（`custom`文件才有效）
 [patch原理](https://blog.csdn.net/weixin_42148809/article/details/124827354)
-[patch用法](https://github.com/rime/home/wiki/Configuration#補靪)
+[✅✅✅patch用法](https://github.com/rime/home/wiki/Configuration#補靪)
 [CustomizationGuide](https://github.com/rime/home/wiki/CustomizationGuide#定製指南)
 
+[patch @before last{n} n从10开始有问题 · Issue #592 · rime/librime](https://github.com/rime/librime/issues/592)
 ## import_preset和__include的区别
 和上下文相关
 
@@ -14,6 +15,8 @@
 
 ## patch
 ### 数组操作
+#### 修改
+#### 插入
 ```yaml
 最前插入
 xxx/@before 0: a
@@ -26,9 +29,9 @@ xxx/@after 1: a
 xxx/@after 2: a
 
 最后1项前依次插入
-xxx/@before last: a
-xxx/@before last1: b
-xxx/@before last2: c
+xxx/@before last01: a #这里是字符串排序，所以两位数兼容性比较好
+xxx/@before last02: b
+xxx/@before last03: c
 
 末尾依次插入
 xxx/+: #推荐
@@ -36,19 +39,20 @@ xxx/+: #推荐
   - b
   - c
 
-xxx/@next: a
-xxx/@next1: b
-xxx/@next2: c
-xxx/@next10: c #10开始异常
+xxx/@next01: a
+xxx/@next02: b
+xxx/@next03: c
 ``` 
 
 ### 键值对
 `xxx/key: value`
+
 ### __include
 
 在当前位置包含另一 YAML 节点的內容
-`__include: local/node`
-`__include: config.yaml:/external/node` 另一文件
+1. 本地节点：`__include: local/node`
+2. 另一文件全部：`__include: config.yaml:/`
+3. 另一文件子节点：`__include: config.yaml:/external/node`
 ```
 include_example_5:
   __include: some_map

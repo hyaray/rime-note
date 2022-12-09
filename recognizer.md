@@ -5,6 +5,7 @@
 ## patterns
 > 注意`数字`，否则可能无法选择项目
 > 命令的唯一目的，就是在[tag]里可以指定
+> 匹配后就会跳出？
 配合[[segmentor#prefix]]和`suffix`完成段落劃分、[[功能索引#tag]]分配
 
 ### punct

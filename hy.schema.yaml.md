@@ -2,7 +2,8 @@
 - [✅Schema.yaml](https://github.com/LEOYoon-Tsaw/Rime_collections/blob/master/Rime_description.md)
 
 - [输入方案下载](https://github.com/rime/plum#packages)
-- [方案](https://github.com/orgs/rime/repositories)
+- [fkxxyz/rime-cloverpinyin](https://github.com/fkxxyz/rime-cloverpinyin/issues) 
+- [oniondelta/Onio n_Rime_Files: 電腦 Rime 洋蔥方案（注音、雙拼、拼音、形碼、行列30）](https://github.com/oniondelta/Onion_Rime_Files)
 - [雾凇拼音，我的 Rime 配置及新手指引](https://dvel.me/posts/my-rime)
 - [我的 Rime 配置 2022 - Dvel](https://dvel.me/posts/my-rime-setting-2022)
 - [特色功能-开源好用的98五笔输入法-基于Rime的高效五笔输入法](http://www.98wubi.com/tese.html)
@@ -34,7 +35,8 @@
 > 指定选字上屏的热键(代替`12345`)
 > 当数字键有其他用时，比如？
 `alternative_select_keys: aeiou`
-
+### page_down_cycle
+❌`page_down_cycle: true`
 ## switches
 [[switches]]
 ## engine

@@ -20,7 +20,7 @@
 #### 做什么
 - send: 发送按键, `escape`则为清空内容
 - toggle: 切换开关
-- select: `.next`
+- select: `.next`，也可以当[[default.custom.yaml#hotkeys]]直接选择方案
 #### accept
 > [[按键]]
 
