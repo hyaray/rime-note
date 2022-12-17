@@ -11,8 +11,8 @@ rime 输入法的笔记，是用[obsidian](https://obsidian.md/)记录的，里�
 - 候选项增加提示信息：效果如图，提示信息也能输出
 - 开源
 - 内置特性：按数字后自动修改`.`键输出为小数点，而不是句号
-[windows效果.png](https://github.com/hyaray/rime-note/blob/main/windows效果.png)
-[安卓效果.png(https://github.com/hyaray/rime-note/blob/main/安卓效果.png)]
+<img src="https://github.com/hyaray/rime-note/blob/main/windows效果.png">
+<img src="https://github.com/hyaray/rime-note/blob/main/安卓效果.png">
 
 ## 缺点
 - 不支持云功能
