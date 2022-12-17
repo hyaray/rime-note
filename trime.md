@@ -1,6 +1,8 @@
 [使用说明](https://github.com/osfans/trime/wiki/UserGuide)
 [trime.yaml詳解](https://github.com/osfans/trime/wiki/trime.yaml%E8%A9%B3%E8%A7%A3)
 [Trime中为什么没有`共享文件夹`？](https://github.com/osfans/trime/issues/104)
+[在设置界面设置候选词数量 by tumuyan · Pull Request #768 · osfans/trime](https://github.com/osfans/trime/pull/768)
+[Improvement for logging by WhiredPlanck · Pull Request #866 · osfans/trime](https://github.com/osfans/trime/pull/866)
 build文件夹，推荐由PC转过去
 > 重启算法服务：
 
@@ -12,11 +14,15 @@ build文件夹，推荐由PC转过去
 ## 安装步骤
 1. 手机安装release版，`3.2.9`选`配色`有bug，可以先用3.2.8，新版本肯定会修复。
 
+## 设置
+1. 键盘设置：拦截相关热键
+
 ## switches
 - `_hide_candidate` 隐藏候选栏`Candidate_switch`
 - `_hide_comment` 隐藏候选项注释`Comment_switch`
 - `_hide_key_hint` 隐藏按键下方的助记符号`Hint_switch`
 - [3.2.6]`_hide_key_symbol` 隐藏按键上方的符号
+
 ## 键盘要求
 1. 没有直接的数字按键
 2. 没有 CapsLock 功能
@@ -52,24 +58,9 @@ build文件夹，推荐由PC转过去
     - ![[附件/小狼毫配色.png]]
     - 按键上面按键组合成[[#preset_keyboards]]
 1. 多个键盘：[[#keyboards]]主键盘绑定各子键盘
+
 ## style
-界面样式及特色功能
-### 背景色
-#### root_background
-[3.2.3]键盘和候选区的整体背景
-
-#### 编码区
-##### text_back_color
-
-#### 候选区
-##### back_color
-候选区背景
-##### hilited_back_color
-高亮区背景，相对于[[#back_color]]
-### 字体色
-#### comment_text_color
-#### hilited_text_color
-标明编码
+界面样式及特色功能，具体见 [[#preset_color_schemes]]
 
 ### 尺寸
 #### horizontal_gap
@@ -139,7 +130,7 @@ build文件夹，推荐由PC转过去
 - `movable`: 是否可移动窗口，或仅移动一次 true|false|once
 
 ### window
-> 各组件
+> 编码、候选项等组件 [window](https://github.com/osfans/trime/wiki/trime.yaml%E8%A9%B3%E8%A7%A3#4悬浮窗口)
 #### 窗口移动图标
 - `- {start: "", move: 'ㄓ ', end: ""}`  
     当`movable`设为可移动时，拖动这个图标即可调整悬浮窗的位置。`move`可改为任意符号，`start` `end`为左右修饰符号，若不需要修饰可简化为`{move: 'ㄓ '}`。
@@ -177,27 +168,12 @@ build文件夹，推荐由PC转过去
 - `"#aarrggbb"` （引号不能省略，否则会与注释冲突）
 - `"#rrggbb"` （同上）
 - `0xaa`
-### 配色方案
-#### back_color
-✅全局背景，[[#keyboard_back_color]]+[[#candidate_background]]
-#### keyboard_back_color
-键盘背景，可用图片(需放在`rime/backgrounds`文件夹内)
-#### candidate_background
-候选区背景
-#### hilited_key_back_color
-高亮按键背景
-#### long_text_back_color
-包含长按功能的背景色
-#### text_color
-✅全局文字
-#### key_back_color
-✅按键背景
-#### hilited_candidate_back_color
-候选高亮背景
+### [[soft/rime/trime-color]]
 
 ## android_keys
 ❌内置按键以及各种可用的条件、功能查阅，一般没什么用了。见[[#preset_keys]]
 [android_keys](https://github.com/osfans/trime/wiki/trime.yaml%E8%A9%B3%E8%A7%A3#四android_keys)
+
 ### when
 - `click`: ✅单击
 - `long_click`: ✅长按，按键字符同`hint`
@@ -213,32 +189,64 @@ build文件夹，推荐由PC转过去
 - #`hover`: 滑过
 - `combo`: 并击
 - #`double_click`: 双击
-### property
-- `label`: ✅按键标签 特别的：当按键为符号键，且输入模式为英文或英文标点时，此设置无效
-- `hint`: ✅按键助记（用于显示双拼的韵母等，通常显示在按键字符下方）
-- `preview`: ✅按键气泡提示，默认读取`label`，空格键默认读取输入方案名
-- `functional`: ✅是否跟随`Shift`键的颜色风格
-- `send_bindings`: 用来控制`composing`、`has_menu`、`paging`时是否发送按键给后台（默认`true`：发送；`false`：不发送，仅改变按键标签，按键的实际功能仍是`click`）
-- `states`: 状态标签（用于切换开关的状态）
-- `width`: 宽度
-- `height`: 高度
-- `shift_lock`: Shift、Ctrl、Alt、Meta 等修饰键的锁定方式（click：单击锁定，可用于「选择」键；long：长按锁定；ascii_long：仅英文状态长按锁定）
-- `repeatable`: 长按重复
-- #`gap`: 间隔
-- [3.2.6]`label_symbol`: 按键的符号标签（通常显示在按键字符上方，当缺少此参数时，显示 long_click 指定的预设按键的的 label）
 
+### property
+#### label
+✅中文状态的按键标签
+#### hint
+✅按键助记（用于显示双拼的韵母等，显示在按键下方，修改颜色见[[soft/rime/trime-color#key_symbol_color]]）
+#### preview
+✅按键气泡提示，默认读取`label`，空格键默认读取输入方案名
+#### send_bindings
+用来控制`composing`、`has_menu`、`paging`时是否发送按键给后台（默认`true`：发送；`false`：不发送，仅改变按键标签，按键的实际功能仍是`click`）
+#### states
+状态标签（用于切换开关的状态）
+#### width
+#### height
+#### shift_lock
+Shift、Ctrl、Alt、Meta 等修饰键的锁定方式（click：单击锁定，可用于「选择」键；long：长按锁定（`默认`）；ascii_long：仅英文状态长按锁定）
+#### repeatable
+长按重复
+#### gap
+间隔
+- [3.2.6]`label_symbol`: 按键的符号标签（通常显示在按键字符上方，当缺少此参数时，显示 long_click 指定的预设按键的的 label）
+- `enter_labels`：回车键的文本会动态变化[由App指定Enter键的文字 · Issue #669 · osfans/trime](https://github.com/osfans/trime/issues/669)
+#### functional
+✅是否跟随功能键的颜色风格
 ### action
 - `command`: 执行命令。目前内建支持的值包含：`liquid_keyboard paste_by_char broadcast clipboard date commit run share_text`,其他值会作为 Intent 处理
-- `text`: ✅组合键比如`(){left}`，不能直接用在键盘布局中，要定义到按键后，需要用`click`等绑定才生效
 - `send`: ✅发送按键
 - `option`: 命令参数
 - `select`: 选择（键盘布局）
 - `toggle`: 切换状态
 - `commit`: 直接上屏 （用于输出各种网址邮箱等）
+- `VOICE_ASSIST`语音输入
+#### text
+✅组合键，比如`(){left}`，不能直接用在键盘布局中，要定义到按键后，需要用`click`等绑定才生效
+```yaml
+- "{Escape}{/fh}"：清空前面的输入码并输入`/fh` （配合 symbols.yaml 可以输入符号）
+- "「」{Left}{Keyboard_default}"：输出成对符号`「」`并把光标移到符号中间再返回主键盘
+- "{Control+Left}"：逐词移动。（单个组合键也可以直接用`send: Control+Left`，`text`可以看作是组合键的组合）
+```
 
-`VOICE_ASSIST`语音输入
+```yaml
+  Date: {label: 日期, send: function, command: date, option: " yyyy-MM-dd "}
+  Time: {label: 時間, send: function, command: date, option: "HH:mm:ss"} #時間： date 格式
+  TrimeApp: {label: 同文, send: function, command: run, option: "com.osfans.trime"} #運行程序: run 包名
+  TrimeCmp: {label: 同文組件, send: function, command: run, option: "com.osfans.trime/.Pref"} #運行程序指定組件: run 包名/組件名
+  Homepage: {label: 同文主頁, send: function, command: run, option: "https://github.com/osfans/trime"} #查看網頁: run 網址
+  Wiki: {label: 維基, send: function, command: run, option: "https://zh.wikipedia.org/wiki/%s"} #搜索網頁: %s或者%1$s爲當前字符
+  Google: {label: 谷歌, send: function, command: run, option: "https://www.google.com/search?q=%s"} #搜索網頁: %s或者%1$s爲當前字符
+  MoeDict: {label: 萌典, send: function, command: run, option: "https://www.moedict.tw/%3$s"} #搜索網頁: %3$s爲光標前字符
+  Baidu: {label: 百度搜索, send: function, command: run, option: "https://www.baidu.com/s?wd=%4$s"} #搜索網頁: %4s爲光標前所有字符
+  Zdic: {label: 漢典, send: function, command: run, option: "http://www.zdic.net/sousuo/?q=%1$s"} #搜索網頁: %s或者%1$s爲當前字符
+  Zdic2: {label: 漢典, send: function, command: run, option: "http://www.zdic.net/sousuo/?q=%2$s"} #搜索網頁: %2$s爲當前輸入的編碼
+  WebSearch: {label: 搜索網頁, send: function, command: web_search, option: "%4$s"} #搜索，其他view、dial、edit、search等intent，參考安卓的intent文檔：https://developer.android.com/reference/android/content/Intent.html
+```
+
 ## preset_keys
 ✅✅✅自定义按键，对[[#android_keys]]的补充
+这里定义的键，默认[[#functional]]为true
 > 如果指定的`name`在`android_keys`和`preset_keys`中都找不到，那就以文本形式直接输出（比如`{click: 你好}`，单击该键时，就直接输出「你好」）。在制作特殊符号键盘时，可能需要这种效果。
 [preset_keys](https://github.com/osfans/trime/wiki/trime.yaml%E8%A9%B3%E8%A7%A3#五preset_keys)
 [按键功能组合示例](https://github.com/osfans/trime/wiki/trime.yaml%E8%A9%B3%E8%A7%A3#按键功能组合示例)

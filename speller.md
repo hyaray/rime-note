@@ -12,6 +12,7 @@
         2. `n > 1`补充当前按键
 2. 未设置[[#max_code_length]]
     1. `n > 1`补充当前按键，更新后若`n == 1`，则直接上屏
+
 ## algebra
 ✅✅✅打字的核心拼写处理逻辑，修改输入码。默认只处理小写字母按键为[[输入码]]，其他直接上屏
 指定生成[[用户文件夹#hy.prism.bin]]文件的拼写运算规则，也可将一组并击编码转换为拼音音节
@@ -31,14 +32,13 @@
 是否以`空格`作为[[输入码]]
 
 ## max_code_length
-✅五笔则需要设置此项，，这样在此范围内输入码没有找到结果时，不会乱上屏减较码长的内容，比如`luns`
+✅五笔则需要设置此项，这样在此范围内输入码没有找到结果时，不会乱上屏减较码长的内容，比如`luns`
 - 如果被`recognizer`识别为url等，则会无效
 - 优先级比[[translator#enable_sentence]]高
 `max_code_length: 4`
 ## auto_clear
 超过长度自动清除[[输入码]]
 - 如果错误率低，不需要
-
 `auto_clear: max_length`
 
 ## auto_select
@@ -53,8 +53,8 @@
 ## auto_select_unique_candidate
 ~~❌淘汰了~~
 ## auto_select_pattern
-`auto_select_pattern: ^ss$`
-- ❌无效，没什么用。自动上屏规则（正则）
+- 自动上屏规则（正则）
+`auto_select_pattern: "^([a-y]z|[a-z]{4})$"`
 
 ## delimiter
 上屏的音节`分隔符`，五笔没用

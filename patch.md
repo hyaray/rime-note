@@ -46,7 +46,7 @@ xxx/@next03: c
 
 ### 键值对
 `xxx/key: value`
-
+刪除：`xxx/`
 ### __include
 
 在当前位置包含另一 YAML 节点的內容
